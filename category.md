@@ -4,7 +4,7 @@ FORMAT: 1A
 # Entity Categories [/api//entity/{entity_id}/category]
 
 
-## Retrieve Entity Categories
+## Retrieve Entity Categories [GET]
 
 
 + Headers
