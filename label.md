@@ -1,7 +1,7 @@
 FORMAT: 1A
 
 
-# Entity Label [/api//entity/{entity_id}/label]
+# Entity Label [/api/entity/{entity_id}/label]
 
 
 ## Retrieve Entity Label [GET]

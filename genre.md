@@ -1,7 +1,7 @@
 FORMAT: 1A
 
 
-# Entity Genre [/api//entity/{entity_id}/genre]
+# Entity Genre [/api/entity/{entity_id}/genre]
 
 
 ## Retrieve Entity Genre [GET]

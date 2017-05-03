@@ -1,7 +1,7 @@
 FORMAT: 1A
 
 
-# Entity Articles [/api//entity/{entity_id}/article]
+# Entity Articles [/api/entity/{entity_id}/article]
 
 
 ## Retrieve Entity Articles [GET] 
@@ -62,7 +62,7 @@ FORMAT: 1A
 
 
 
-# Article [/api//entity/{entity_id}/article/{article_id}]
+# Article [/api/entity/{entity_id}/article/{article_id}]
 
 
 ## Retrieve an article [GET]
