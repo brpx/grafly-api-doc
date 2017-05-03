@@ -1,7 +1,7 @@
 FORMAT: 1A
 
 
-# Entity Articles [/entity/:entity_id/article]
+# Entity Articles [/entity/{entity_id}/article]
 
 
 ## Retrieve Entity Articles [GET] 
