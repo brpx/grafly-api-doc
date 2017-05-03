@@ -65,7 +65,7 @@ FORMAT: 1A
 # Article [/entity/{entity_id}/article/{article_id}]
 
 
-## Retrieve an article
+## Retrieve an article [GET]
 
 + Headers
 
@@ -73,5 +73,11 @@ FORMAT: 1A
 
 + Response 200 (application/json)
 
-        {"id": ".....", "title": "....", ... }
+        {
+            "id": ".....", 
+            "title": "....", ... 
+        }
 
+
+
+## Update an article 
