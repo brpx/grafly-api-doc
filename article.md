@@ -52,7 +52,7 @@ FORMAT: 1A
 
     + created_after: `2016-04-01` (date, optional)
 
-    +createdd_before: `2016-04-01` (date, optional)
+    + created_before: `2016-04-01` (date, optional)
 
 
 + Response 200 (application/json)
