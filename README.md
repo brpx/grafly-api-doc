@@ -4,6 +4,6 @@ Documentation format according to [https://apiblueprint.org]
 
 
 
-Article - [article.md]
+Article - [article.md](article.md)
 
 
