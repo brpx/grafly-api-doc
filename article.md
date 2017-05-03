@@ -74,10 +74,10 @@ FORMAT: 1A
 + Response 200 (application/json)
 
         {
-            "id": ".....", 
-            "title": "....", ... 
+            "id": ".....",
+            "title": "....",
+            ...
         }
 
 
 
-## Update an article 
