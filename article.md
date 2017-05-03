@@ -12,6 +12,7 @@ FORMAT: 1A
 
 + Parameters
 
+
     + status: `Published` (enum[String], optional) - Article status
 
         + Members
@@ -58,4 +59,19 @@ FORMAT: 1A
 + Response 200 (application/json)
 
         { "articles": [ {"id": ".....", "title": "....", ... }], "total": 15}
+
+
+
+# Article [/entity/{entity_id}/article/{article_id}]
+
+
+## Retrieve an article
+
++ Headers
+
+        Authorization: <api_key>
+
++ Response 200 (application/json)
+
+        {"id": ".....", "title": "....", ... }
 
