@@ -12,6 +12,10 @@ FORMAT: 1A
         Authorization: <api_key>
 
 
++ Parameters
+
+        + search: `search term` (string, optional)
+
 
 Response 200 (application/json)
 
