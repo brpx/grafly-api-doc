@@ -2,7 +2,7 @@
 
 Documentation format according to [https://apiblueprint.org]
 
-
+## Content
 
 Article - [article.md](article.md)
 
@@ -20,4 +20,12 @@ Tag - [tag.md](tag.md)
 
 Tag type - [tagtype.md](tagtype.md)
 
+
+## CMS
+
+Page - [cms_page.md](cms_page.md)
+
+Block type - [cms_blocktype.md](cms_blocktype.md)
+
+Menu - [cms_menu.md](cms_menu.md)
 
