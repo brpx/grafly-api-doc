@@ -48,4 +48,45 @@ Response 200 (application/json)
             ]
         }
 
-            
+
+
+## Retrieve Entity page by name [GET]
+
++ Headers
+
+        Authorization: <api_key>
+
++ Parameters
+
+    + name: `Homepage` (String, required)
+
+
+Response 200 (application/json)
+
+
+        {
+            "status" : "published",
+            "name" : "Homepage",
+            "blocks" : [
+                {
+                    "title_visible" : "false",
+                    "name" : "Manchete",
+                    "items" : [
+                        {
+                            "scheduled_publishing" : 0,
+                            "type" : "post",
+                            "review_status" : "",
+                            "highlights" : [],
+                            "created_at" : "2017-04-26T21:56:00Z",
+                            "published_at" : "2017-04-27T10:27:51Z",
+                            "genre" : {
+                                "id" : "e1fe8d00-7580-4dda-b3ef-019162fa5bd6",
+                                "name" : "Notícia"
+                            },
+                            ...
+                        }
+                    ],
+                    ...
+                }
+            ]
+        }
