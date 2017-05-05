@@ -1,7 +1,7 @@
 FORMAT: 1A
 
 
-# Entity Categories [/api/entity/{entity_id}/category]
+# Entity Categories [/api/v1.1/entity/{entity_id}/category]
 
 
 ## Retrieve Entity Categories [GET]

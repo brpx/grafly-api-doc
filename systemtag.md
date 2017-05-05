@@ -1,7 +1,7 @@
 FORMAT: 1A
 
 
-# Entity System tag [/api/entity/{entity_id}/systemtag]
+# Entity System tag [/api/v1.1/entity/{entity_id}/systemtag]
 
 
 ## Retrieve Entity sytem tag [GET]

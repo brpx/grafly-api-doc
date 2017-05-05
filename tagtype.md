@@ -1,7 +1,7 @@
 FORMAT: 1A
 
 
-# Entity tag type [/api/entity/{entity_id}/tagtype]
+# Entity tag type [/api/v1.1/entity/{entity_id}/tagtype]
 
 
 ## Retrieve Entity tag types [GET]

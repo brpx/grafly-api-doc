@@ -1,7 +1,7 @@
 FORMAT: 1A
 
 
-# Entity Pages [/api/entity/{entity_id}/cms/pages]
+# Entity Pages [/api/v1.1/entity/{entity_id}/cms/pages]
 
 
 ## Retrieve Entity pages [GET]

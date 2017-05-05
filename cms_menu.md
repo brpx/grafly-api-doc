@@ -1,7 +1,7 @@
 FORMAT: 1A
 
 
-# Entity Menus [/api/entity/{entity_id}/cms/menus]
+# Entity Menus [/api/v1.1/entity/{entity_id}/cms/menus]
 
 
 ## Retrieve Entity menus [GET]

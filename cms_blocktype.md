@@ -1,7 +1,7 @@
 FORMAT: 1A
 
 
-# Entity Block types [/api/entity/{entity_id}/cms/blocktypes]
+# Entity Block types [/api/v1.1/entity/{entity_id}/cms/blocktypes]
 
 
 ## Retrieve Entity block types [GET]

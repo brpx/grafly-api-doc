@@ -1,7 +1,7 @@
 FORMAT: 1A
 
 
-# Entity Authors [/api/entity/{entity_id}/author]
+# Entity Authors [/api/v1.1/entity/{entity_id}/author]
 
 
 ## Retrieve Entity Authors [GET]

@@ -1,7 +1,7 @@
 FORMAT: 1A
 
 
-# Entity tag [/api/entity/{entity_id}/tag]
+# Entity tag [/api/v1.1/entity/{entity_id}/tag]
 
 
 ## Retrieve Entity Tags [GET]
