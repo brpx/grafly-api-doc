@@ -60,6 +60,8 @@ Response 200 (application/json)
 
     + name: `Homepage` (String, required)
 
+    + status: `published` (String, optional)
+
 
 Response 200 (application/json)
 
