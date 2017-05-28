@@ -8,6 +8,14 @@ This format answers the "how to migrate" question by representing the **output o
 
 The "what to migrate" question is handled by separating attributes which are relevant for Graf.ly's data model from attributes which are only relevant to the _frontend_ layer, while eliminating irrelevant attributes altogether. The secondary purpose of the specification is thus to **remove uncertainty** from the migration process, while helping identify requirements not covered by Graf.ly's data model (ensuring these issues can be dealt with appropriately).
 
+## Structure
+
+Each article is represented by three main blocks:
+
+* `content` - Main article content after interpretation by legacy _frontend_ rules (if any), in display order.
+* `metadata` - Additional article attributes with _frontend_-defined positioning, which may or may not be displayed.
+* `objects` - Objects referenced by the article, which represent separate entities from the article itself. This block makes the article self-contained but, during a mass migration, objects may be included only when they're first referenced, thus saving space in subsequent articles. Duplicate objects across articles are only migrated once.
+
 ## Specification
 
 ```
@@ -32,16 +40,16 @@ The "what to migrate" question is handled by separating attributes which are rel
       "id": integer,   # ...reference to a media object matching the above type.
     },
 
-  "body": [] of {              # ...content elements in display order.
-    "type": string,            # ...one of "paragraph" "quote", or "media".
-    "html": string,            # ...ignored when type is "media".
-    "authors": [] of strings,  # ...in display order, ignored when type is not "quote".
+    "body": [] of {              # ...content elements in display order.
+      "type": string,            # ...one of "paragraph" "quote", or "media".
+      "html": string,            # ...ignored when type is "media".
+      "authors": [] of strings,  # ...in display order, ignored when type is not "quote".
 
-    "media": {            # ...ignored when type is not "media".
-      "type": string,     # ...one of "image", "gallery", "video" or "infographic".
-      "id": integer,      # ...reference to a media object matching the above type.
-      "width": integer,   # ...horizontal size (in pixels) for the media box.
-      "height": integer,  # ...vertical size (in pixels) for the media box.
+      "media": {            # ...ignored when type is not "media".
+        "type": string,     # ...one of "image", "gallery", "video" or "infographic".
+        "id": integer,      # ...reference to a media object matching the above type.
+        "width": integer,   # ...horizontal size (in pixels) for the media box.
+        "height": integer,  # ...vertical size (in pixels) for the media box.
       },
     },
   },
