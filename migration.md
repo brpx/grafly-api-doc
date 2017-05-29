@@ -18,8 +18,16 @@ Each article is represented by three main blocks:
 
 ## Specification
 
+### Notes
+* URL attributes must be ASCII-only (URL-encoded).
+* Time attributes are in UNIX format (seconds since `1970-01-01 00:00:00 UTC`).
+
+### Format
 ```
 {
+  "document": "migration.article",  #  ...always "migration.article".
+  "revision": "0.9",                #  ...document format revision.
+
   "id": integer,  # ...this article's ID (unique).
 
   "content": {              # ...displayed content, with a defined order.
