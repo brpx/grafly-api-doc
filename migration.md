@@ -19,15 +19,6 @@ Each article is represented by three main blocks:
 ## Specification
 
 ```
-#
-# Intermediate (import) JSON format specification [v0.9]
-#
-# Notes:
-#
-#   * URL attributes must be ASCII-only (URL-encoded).
-#   * Time attributes are in UNIX format (seconds since 1970-01-01 00:00:00 UTC).
-#
-
 {
   "id": integer,  # ...this article's ID (unique).
 
@@ -105,32 +96,32 @@ Each article is represented by three main blocks:
     "categories": [] of {
       "id": integer,       # ...this category object's ID (unique).
       "name": string,      # ...in plain text.
-      "slug": string,      # ...in plain text.
+      "slug": string,      # ...in plain text (starting with a "/").
     },
 
     "tags": [] of {
       "id": integer,          # ...this tag object's ID (unique).
       "name": string,         # ...in plain text.
       "description": string,  # ...in plain text.
-      "slug": string,         # ...in plain text.
+      "slug": string,         # ...in plain text (starting with an "#").
     },
 
     "system_tags": [] of {
       "id": integer,        # ...this system tag object's ID (unique).
       "name": string,       # ...in plain text.
-      "css_class":          # ...in plain text.
+      "css_class":          # ...in plain text (starting with a ".").
     },
 
     "labels": [] of {
       "id": integer,        # ...this label object's ID (unique).
       "name": string,       # ...in plain text.
-      "css_class": string,  # ...in plain text.
+      "css_class": string,  # ...in plain text (starting with a ".").
     },
 
     "genres": [] of {
       "id": integer,        # ...this genre object's ID (unique).
       "name": string,       # ...in plain text.
-      "css_class": string,  # ...in plain text.
+      "css_class": string,  # ...in plain text (starting with a ".").
     },
   },
 
