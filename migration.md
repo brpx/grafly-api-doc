@@ -117,7 +117,7 @@ Each article is represented by three main blocks:
     "system_tags": [] of {
       "id": integer,        # ...this system tag object's ID (unique).
       "name": string,       # ...in plain text.
-      "css_class":          # ...in plain text (starting with a ".").
+      "css_class": string   # ...in plain text (starting with a ".").
     },
 
     "labels": [] of {
