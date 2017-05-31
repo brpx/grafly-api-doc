@@ -28,7 +28,8 @@ Each article is represented by three main blocks:
   "document": "migration.article",  #  ...always "migration.article".
   "revision": "0.9",                #  ...document format revision.
 
-  "id": integer,  # ...this article's ID (unique).
+  "id": integer,        # ...this article's ID (unique).
+  "legacy_id": string,  # ...this article's legacy ID (opaque, for future reference).
 
   "content": {              # ...displayed content, with a defined order.
     "title": string,        # ...in HTML.
