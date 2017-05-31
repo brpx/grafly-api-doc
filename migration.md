@@ -41,9 +41,14 @@ Each article is represented by three main blocks:
     },
 
     "body": [] of {              # ...content elements in display order.
-      "type": string,            # ...one of "paragraph" "quote", or "media".
+      "type": string,            # ...one of "paragraph" "quote", "media" or "article".
       "html": string,            # ...ignored when type is "media".
       "authors": [] of strings,  # ...in display order, ignored when type is not "quote".
+
+      "article": {       # ...ignored when type is not "article".
+        "type": string,  # ...currently only "live" (sub-articles of different types aren't allowed).
+        "id": integer,   # ...reference to another article (previously migrated).
+      },
 
       "media": {            # ...ignored when type is not "media".
         "type": string,     # ...one of "image", "gallery", "video" or "infographic".
