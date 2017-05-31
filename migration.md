@@ -42,7 +42,7 @@ Each article is represented by three main blocks:
 
     "body": [] of {              # ...content elements in display order.
       "type": string,            # ...one of "paragraph" "quote", "media" or "article".
-      "html": string,            # ...ignored when type is "media".
+      "html": string,            # ...ignored when type is not "paragraph" or "quote".
       "authors": [] of strings,  # ...in display order, ignored when type is not "quote".
 
       "article": {       # ...ignored when type is not "article".
