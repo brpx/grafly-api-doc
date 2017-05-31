@@ -110,14 +110,14 @@ Each article is represented by three main blocks:
     "categories": [] of {
       "id": integer,       # ...this category object's ID (unique).
       "name": string,      # ...in plain text.
-      "slug": string,      # ...in plain text (starting with a "/").
+      "slug": string,      # ...in plain text.
     },
 
     "tags": [] of {
       "id": integer,          # ...this tag object's ID (unique).
       "name": string,         # ...in plain text.
       "description": string,  # ...in plain text.
-      "slug": string,         # ...in plain text (starting with an "#").
+      "slug": string,         # ...in plain text.
     },
 
     "system_tags": [] of {
