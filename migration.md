@@ -83,16 +83,17 @@ Each article is represented by three main blocks:
     "genres": [] of integers,       # ...references to genre objects.
   },
 
-  "objects": {             # ...referenced objects, not migrated again if already seen before.
+  "objects": {              # ...referenced objects, not migrated again if already seen before.
     "authors": [] of {
-      "id": integer,       # ...this author object's ID (unique).
-      "name": string,      # ...in plain text.
-      "role": string,      # ...in plain text.
-      "email": string,     # ...in plain text.
-      "photo": integer,    # ...reference to a media object of type "image".
-      "bio": string,       # ...in plain text.
-      "twitter": string,   # ...Twitter username without the leading "@".
-      "facebook": string,  # ...Facebook username as it appears in "facebook.com/<username>".
+      "id": integer,        # ...this author object's ID (unique).
+      "legacy_id": string,  # ...this author's legacy ID (opaque, for future reference).
+      "name": string,       # ...in plain text.
+      "role": string,       # ...in plain text.
+      "email": string,      # ...in plain text.
+      "photo": integer,     # ...reference to a media object of type "image".
+      "bio": string,        # ...in plain text.
+      "twitter": string,    # ...Twitter username without the leading "@".
+      "facebook": string,   # ...Facebook username as it appears in "facebook.com/<username>".
       "url": string,
     },
 
