@@ -26,14 +26,16 @@ Each article is represented by three main blocks:
 ```
 {
   "document": "migration.article",  #  ...always "migration.article".
-  "revision": "0.9",                #  ...document format revision.
+  "revision": "0.10",               #  ...document format revision.
 
   "id": integer,        # ...this article's ID (unique).
   "legacy_id": string,  # ...this article's legacy ID (opaque, for future reference).
+  "hidden": boolean,    # ...when "true", this article won't appear in search results.
 
-  "content": {              # ...displayed content, with a defined order.
-    "title": string,        # ...in HTML.
-    "description": string,  # ...in HTML.
+  "content": {                  # ...displayed content, with a defined order.
+    "title": string,            # ...in HTML.
+    "alternate_title": string,  # ...in HTML.
+    "description": string,      # ...in HTML.
 
     "hero": {          # ...main media element for the article.
       "type": string,  # ...one of "image", "gallery", "video" or "infographic".
@@ -67,6 +69,7 @@ Each article is represented by three main blocks:
     "authors": [] of {     # ...article authors in display order.
       "id": integer,       # ...reference to an author object.
       "location": string,  # ...in plain text (eg. "Lisboa").
+      "role": string,      # ...role at the time of publishing.
     },
 
     "related": [] of {
@@ -76,67 +79,50 @@ Each article is represented by three main blocks:
       "url": string,    # ...an external link, ignored when type is not "link".
     },
 
-    "categories": [] of integers,   # ...references to category objects.
-    "tags": [] of integers,         # ...references to tag objects.
-    "system_tags": [] of integers,  # ...references to system tag objects.
-    "labels": [] of integers,       # ...references to label objects.
-    "genres": [] of integers,       # ...references to genre objects.
+    "taxonomies": [] of {
+      "type": string,  # ...one of "category", "tag", "system_tag", "label" or "genre".
+      "id": integer,   # ...reference to the taxonomy object's ID.
+    },
   },
 
-  "objects": {              # ...referenced objects, not migrated again if already seen before.
+  "objects": {                       # ...referenced objects, not migrated again if already seen before.
     "authors": [] of {
-      "id": integer,        # ...this author object's ID (unique).
-      "legacy_id": string,  # ...this author's legacy ID (opaque, for future reference).
-      "name": string,       # ...in plain text.
-      "role": string,       # ...in plain text.
-      "email": string,      # ...in plain text.
-      "photo": integer,     # ...reference to a media object of type "image".
-      "bio": string,        # ...in plain text.
-      "twitter": string,    # ...Twitter username without the leading "@".
-      "facebook": string,   # ...Facebook username as it appears in "facebook.com/<username>".
-      "url": string,
+      "id": integer,                 # ...this author object's ID (unique).
+      "legacy_id": string,           # ...this author's legacy ID (opaque, for future reference).
+      "name": string,                # ...in plain text.
+      "role": string,                # ...in plain text.
+      "email": string,               # ...in plain text.
+      "photo": integer,              # ...reference to a media object of type "image".
+      "bio": string,                 # ...in plain text.
+      "system_tags": [] of integer,  # ...references to system tag objects (their IDs).
+
+      "social": [] of {
+        "type": string,  # ...one of "facebook", "twitter", "google+" or "other".
+        "url": string,   # ...full URL to the authors' website or social network profile.
+      },
     },
 
     "media": [] of {
       "type": string,            # ...one of "image", "video", "gallery", "infographic" or "document".
       "id": integer,             # ...this media object's ID (unique for each type).
+      "created": timestamp,      # ...media creation time.
       "title": string,           # ...in HTML.
       "description": string,     # ...in HTML.
+      "thumbnail": integer,      # ...reference to an image object ID, only when type is "video".
       "authors": [] of strings,  # ...in plain text, in display order.
       "images": [] of integers,  # ...references to images (in order), only when type is "gallery".
       "url": string,             # ...original media item's location, ignored when type is "gallery".
-      "migrate": boolean,        # ...whether to migrate the media item at "url" to the new media archive.
+      "migrate": boolean,        # ...migrate the "url" when "true" (otherwise migrated outside this process).
+      "external": boolean,       # ...migration consists of just a stub article, only when type is "video".
     },
 
-    "categories": [] of {
-      "id": integer,       # ...this category object's ID (unique).
-      "name": string,      # ...in plain text.
-      "slug": string,      # ...in plain text.
-    },
-
-    "tags": [] of {
-      "id": integer,          # ...this tag object's ID (unique).
+    "taxonomies": [] of {
+      "id": integer,          # ...this item's ID (unique for each type).
+      "type": string,         # ...one of "category", "tag", "system_tag", "label" or "genre".
       "name": string,         # ...in plain text.
-      "description": string,  # ...in plain text.
-      "slug": string,         # ...in plain text.
-    },
-
-    "system_tags": [] of {
-      "id": integer,        # ...this system tag object's ID (unique).
-      "name": string,       # ...in plain text.
-      "css_class": string   # ...in plain text (starting with a ".").
-    },
-
-    "labels": [] of {
-      "id": integer,        # ...this label object's ID (unique).
-      "name": string,       # ...in plain text.
-      "css_class": string,  # ...in plain text (starting with a ".").
-    },
-
-    "genres": [] of {
-      "id": integer,        # ...this genre object's ID (unique).
-      "name": string,       # ...in plain text.
-      "css_class": string,  # ...in plain text (starting with a ".").
+      "slug": string,         # ...in plain text, only when type is "category" or "tag".
+      "css_class": string,    # ...in plain_text, only when type is "system_tag", "label" or "genre".
+      "description": string,  # ...in plain text, only when type is "tag".
     },
   },
 
