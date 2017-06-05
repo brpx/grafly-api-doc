@@ -21,6 +21,7 @@ Each article is represented by three main blocks:
 ### Notes
 * URL attributes must be ASCII-only (URL-encoded).
 * Time attributes are in UNIX format (seconds since `1970-01-01 00:00:00 UTC`).
+* The article's `content` may be omitted (along with its `metadata` and `taxonomies`), turning it into a stub. When this is the case, its `objects` are migrated as normal but no actual article is created in Graf.ly. The `id` is the only mandatory attribute, which must always be unique for the whole article set.
 
 ### Format
 ```
@@ -28,7 +29,7 @@ Each article is represented by three main blocks:
   "document": "migration.article",  #  ...always "migration.article".
   "revision": "0.10",               #  ...document format revision.
 
-  "id": integer,        # ...this article's ID (unique).
+  "id": string,         # ...this article's ID (unique).
   "legacy_id": string,  # ...this article's legacy ID (opaque, for future reference).
   "hidden": boolean,    # ...when "true", this article won't appear in search results.
 
@@ -39,7 +40,7 @@ Each article is represented by three main blocks:
 
     "hero": {          # ...main media element for the article.
       "type": string,  # ...one of "image", "gallery", "video" or "infographic".
-      "id": integer,   # ...reference to a media object matching the above type.
+      "id": string,    # ...reference to a media object matching the above type.
     },
 
     "body": [] of {              # ...content elements in display order.
@@ -49,12 +50,12 @@ Each article is represented by three main blocks:
 
       "article": {       # ...ignored when type is not "article".
         "type": string,  # ...currently only "live" (sub-articles of different types aren't allowed).
-        "id": integer,   # ...reference to another article (previously migrated).
+        "id": string,    # ...reference to another article (previously migrated).
       },
 
       "media": {            # ...ignored when type is not "media".
         "type": string,     # ...one of "image", "gallery", "video" or "infographic".
-        "id": integer,      # ...reference to a media object matching the above type.
+        "id": string,       # ...reference to a media object matching the above type.
         "width": integer,   # ...horizontal size (in pixels) for the media box.
         "height": integer,  # ...vertical size (in pixels) for the media box.
       },
@@ -66,35 +67,35 @@ Each article is represented by three main blocks:
     "published": timestamp,  # ...article publishing time.
     "updated": timestamp,    # ...article last update time.
 
-    "authors": [] of {     # ...article authors in display order.
-      "id": integer,       # ...reference to an author object.
-      "location": string,  # ...in plain text (eg. "Lisboa").
-      "role": string,      # ...role at the time of publishing.
+    "authors": [] of {      # ...article authors in display order.
+      "id": string,         # ...reference to an author object.
+      "location": string,   # ...in plain text (eg. "Lisboa").
+      "role": string,       # ...role at the time of publishing.
     },
 
     "related": [] of {
       "type": string,   # ...one of "media", "article" or "link".
-      "id": integer     # ...reference to a media object or an article, ignored when type is "link".
+      "id": string,     # ...reference to a media object or an article, ignored when type is "link".
       "title": string,  # ...in HTML, ignored when type is not "link".
       "url": string,    # ...an external link, ignored when type is not "link".
     },
 
     "taxonomies": [] of {
       "type": string,  # ...one of "category", "tag", "system_tag", "label" or "genre".
-      "id": integer,   # ...reference to the taxonomy object's ID.
+      "id": string,    # ...reference to the taxonomy object's ID.
     },
   },
 
-  "objects": {                       # ...referenced objects, not migrated again if already seen before.
+  "objects": {                      # ...referenced objects, not migrated again if already seen before.
     "authors": [] of {
-      "id": integer,                 # ...this author object's ID (unique).
-      "legacy_id": string,           # ...this author's legacy ID (opaque, for future reference).
-      "name": string,                # ...in plain text.
-      "role": string,                # ...in plain text.
-      "email": string,               # ...in plain text.
-      "photo": integer,              # ...reference to a media object of type "image".
-      "bio": string,                 # ...in plain text.
-      "system_tags": [] of integer,  # ...references to system tag objects (their IDs).
+      "id": string,                 # ...this author object's ID (unique).
+      "legacy_id": string,          # ...this author's legacy ID (opaque, for future reference).
+      "name": string,               # ...in plain text.
+      "role": string,               # ...in plain text.
+      "email": string,              # ...in plain text.
+      "photo": integer,             # ...reference to a media object of type "image".
+      "bio": string,                # ...in plain text.
+      "system_tags": [] of string,  # ...references to system tag objects (their IDs).
 
       "social": [] of {
         "type": string,  # ...one of "facebook", "twitter", "google+" or "other".
@@ -105,6 +106,7 @@ Each article is represented by three main blocks:
     "media": [] of {
       "type": string,            # ...one of "image", "video", "gallery", "infographic" or "document".
       "id": integer,             # ...this media object's ID (unique for each type).
+      "legacy_id": string,       # ...this media's legacy ID (opaque, for future reference).
       "created": timestamp,      # ...media creation time.
       "title": string,           # ...in HTML.
       "description": string,     # ...in HTML.
