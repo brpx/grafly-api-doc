@@ -124,6 +124,7 @@ Each article is represented by three main blocks:
       "name": string,         # ...in plain text.
       "slug": string,         # ...in plain text, only when type is "category" or "tag".
       "css_class": string,    # ...in plain_text, only when type is "system_tag", "label" or "genre".
+      "subtype": string,      # ...in plain text, case-sensitive, only when type is "tag".
       "description": string,  # ...in plain text, only when type is "tag".
     },
   },
