@@ -93,7 +93,7 @@ Each article is represented by three main blocks:
       "name": string,               # ...in plain text.
       "role": string,               # ...in plain text.
       "email": string,              # ...in plain text.
-      "photo": integer,             # ...reference to a media object of type "image".
+      "photo": string,              # ...reference to a media object of type "image".
       "bio": string,                # ...in plain text.
       "system_tags": [] of string,  # ...references to system tag objects (their IDs).
 
@@ -105,21 +105,21 @@ Each article is represented by three main blocks:
 
     "media": [] of {
       "type": string,            # ...one of "image", "video", "gallery", "infographic" or "document".
-      "id": integer,             # ...this media object's ID (unique for each type).
+      "id": string,              # ...this media object's ID (unique for each type).
       "legacy_id": string,       # ...this media's legacy ID (opaque, for future reference).
       "created": timestamp,      # ...media creation time.
       "title": string,           # ...in HTML.
       "description": string,     # ...in HTML.
-      "thumbnail": integer,      # ...reference to an image object ID, only when type is "video".
+      "thumbnail": string,       # ...reference to an image object ID, only when type is "video".
       "authors": [] of strings,  # ...in plain text, in display order.
-      "images": [] of integers,  # ...references to images (in order), only when type is "gallery".
+      "images": [] of strings,   # ...references to images (in order), only when type is "gallery".
       "url": string,             # ...original media item's location, ignored when type is "gallery".
       "migrate": boolean,        # ...migrate the "url" when "true" (otherwise migrated outside this process).
       "external": boolean,       # ...migration consists of just a stub article, only when type is "video".
     },
 
     "taxonomies": [] of {
-      "id": integer,          # ...this item's ID (unique for each type).
+      "id": string,           # ...this item's ID (unique for each type).
       "type": string,         # ...one of "category", "tag", "system_tag", "label" or "genre".
       "name": string,         # ...in plain text.
       "slug": string,         # ...in plain text, only when type is "category" or "tag".
