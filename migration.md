@@ -95,6 +95,7 @@ Each article is represented by three main blocks:
       "email": string,              # ...in plain text.
       "photo": string,              # ...reference to a media object of type "image".
       "bio": string,                # ...in plain text.
+      "slug": string,               # ...in plain text.
       "system_tags": [] of string,  # ...references to system tag objects (their IDs).
 
       "social": [] of {
