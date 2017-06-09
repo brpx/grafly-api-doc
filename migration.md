@@ -100,7 +100,7 @@ Each article is represented by three main blocks:
       "system_tags": [] of string,  # ...references to system tag objects (their IDs).
 
       "social": [] of {
-        "type": string,  # ...one of "facebook", "twitter", "google+" or "other".
+        "type": string,  # ...one of "facebook", "twitter", "google_plus" or "other".
         "url": string,   # ...full URL to the authors' website or social network profile.
       },
     },
