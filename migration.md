@@ -67,10 +67,11 @@ Each article is represented by three main blocks:
     "published": timestamp,  # ...article publishing time.
     "updated": timestamp,    # ...article last update time.
 
-    "authors": [] of {      # ...article authors in display order.
-      "id": string,         # ...reference to an author object.
-      "location": string,   # ...in plain text (eg. "Lisboa").
-      "role": string,       # ...role at the time of publishing.
+    "authors": [] of {         # ...article authors in display order.
+      "id": string,            # ...reference to an author object.
+      "location": string,      # ...in plain text (eg. "Lisboa").
+      "role": string,          # ...role at the time of publishing.
+      "contribution": string,  # ...in plain text.
     },
 
     "related": [] of {
