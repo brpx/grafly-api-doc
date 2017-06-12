@@ -106,18 +106,27 @@ Each article is represented by three main blocks:
     },
 
     "media": [] of {
-      "type": string,            # ...one of "image", "video", "gallery", "infographic" or "document".
-      "id": string,              # ...this media object's ID (unique for each type).
-      "legacy_id": string,       # ...this media's legacy ID (opaque, for future reference).
-      "created": timestamp,      # ...media creation time.
-      "title": string,           # ...in HTML.
-      "description": string,     # ...in HTML.
-      "thumbnail": string,       # ...reference to an image object ID, only when type is "video".
-      "authors": [] of strings,  # ...in plain text, in display order.
-      "images": [] of strings,   # ...references to images (in order), only when type is "gallery".
-      "url": string,             # ...original media item's location, ignored when type is "gallery".
-      "migrate": boolean,        # ...migrate the "url" when "true" (otherwise migrated outside this process).
-      "external": boolean,       # ...migration consists of just a stub article, only when type is "video".
+      "type": string,               # ...one of "image", "video", "gallery", "infographic" or "document".
+      "id": string,                 # ...this media object's ID (unique for each type).
+      "legacy_id": string,          # ...this media's legacy ID (opaque, for future reference).
+      "created": timestamp,         # ...media creation time.
+      "published": timestamp,       # ...media publishing time.
+      "updated": timestamp,         # ...media last update time.
+      "title": string,              # ...in HTML.
+      "lead": string,               # ...in HTML.
+      "description": string,        # ...in HTML.
+      "thumbnail": string,          # ...reference to an image object ID, only when type is "video".
+      "authors": [] of strings,     # ...in plain text, in display order.
+      "author_ids": [] of strings,  # ...references to author object IDs.
+      "images": [] of strings,      # ...references to images (in order), only when type is "gallery".
+      "url": string,                # ...original media item's location, ignored when type is "gallery".
+      "migrate": boolean,           # ...migrate the "url" when "true" (otherwise migrated outside this process).
+      "external": boolean,          # ...migration consists of just a stub article, only when type is "video".
+
+      "taxonomies": [] of {
+        "type": string,  # ...one of "category", "tag", "system_tag", "label" or "genre".
+        "id": string,    # ...reference to the taxonomy object's ID.
+      },
     },
 
     "taxonomies": [] of {
