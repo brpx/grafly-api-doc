@@ -43,9 +43,9 @@ Each article is represented by three main blocks:
       "id": string,    # ...reference to a media object matching the above type.
     },
 
-    "body": [] of {              # ...content elements in display order.
-      "type": string,            # ...one of "paragraph" "quote", "media" or "article".
-      "html": string,            # ...ignored when type is not "paragraph" or "quote".
+    "body": [] of {                   # ...content elements in display order.
+      "type": string,                 # ...one of "paragraph" "quote", "media" or "article".
+      "html": string,                 # ...ignored when type is not "paragraph" or "quote".
       "author_names": [] of strings,  # ...in display order, ignored when type is not "quote".
 
       "article": {       # ...ignored when type is not "article".
@@ -106,25 +106,25 @@ Each article is represented by three main blocks:
     },
 
     "media": [] of {
-      "type": string,               # ...one of "image", "video", "gallery", "infographic" or "document".
-      "id": string,                 # ...this media object's ID (unique for each type).
-      "legacy_id": string,          # ...this media's legacy ID (opaque, for future reference).
-      "created": timestamp,         # ...media creation time.
-      "published": timestamp,       # ...media publishing time.
-      "updated": timestamp,         # ...media last update time.
-      "title": string,              # ...in HTML.
-      "lead": string,               # ...in HTML, only when type is "video", "gallery", "document" or "infographic".
-      "description": string,        # ...in HTML.
-      "html": string,               # ...an HTML object/payload, only when type is "infographic".
-      "width": integer,             # ...horizontal size (in pixels) for vector media (eg. SWF, SVG).
-      "height": integer,            # ...vertical size (in pixels) for vector media (eg. SWF, SVG).
-      "thumbnail": string,          # ...reference to an image object ID, only when type is "video" or "infographic".
-      "author_names": [] of strings,     # ...in plain text, in display order.
-      "author_ids": [] of strings,  # ...references to author object IDs.
-      "images": [] of strings,      # ...references to images (in order), only when type is "gallery".
-      "url": string,                # ...original media item's location, ignored when type is "gallery".
-      "migrate": boolean,           # ...migrate the "url" when "true" (otherwise migrated outside this process).
-      "external": boolean,          # ...migration consists of just a stub article, only when type is "video".
+      "type": string,                 # ...one of "image", "video", "gallery", "infographic" or "document".
+      "id": string,                   # ...this media object's ID (unique for each type).
+      "legacy_id": string,            # ...this media's legacy ID (opaque, for future reference).
+      "created": timestamp,           # ...media creation time.
+      "published": timestamp,         # ...media publishing time.
+      "updated": timestamp,           # ...media last update time.
+      "title": string,                # ...in HTML.
+      "lead": string,                 # ...in HTML, only when type is "video", "gallery", "document" or "infographic".
+      "description": string,          # ...in HTML.
+      "html": string,                 # ...an HTML object/payload, only when type is "infographic".
+      "width": integer,               # ...horizontal size (in pixels) for vector media (eg. SWF, SVG).
+      "height": integer,              # ...vertical size (in pixels) for vector media (eg. SWF, SVG).
+      "thumbnail": string,            # ...reference to an image object ID, only when type is "video" or "infographic".
+      "author_names": [] of strings,  # ...in plain text, in display order.
+      "author_ids": [] of strings,    # ...references to author object IDs.
+      "images": [] of strings,        # ...references to images (in order), only when type is "gallery".
+      "url": string,                  # ...original media item's location, ignored when type is "gallery".
+      "migrate": boolean,             # ...migrate the "url" when "true" (otherwise migrated outside this process).
+      "external": boolean,            # ...migration consists of just a stub article, only when type is "video".
 
       "taxonomies": [] of {
         "type": string,  # ...one of "category", "tag", "system_tag", "label" or "genre".
