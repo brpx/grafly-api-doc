@@ -114,8 +114,10 @@ Each article is represented by three main blocks:
       "updated": timestamp,         # ...media last update time.
       "title": string,              # ...in HTML.
       "lead": string,               # ...in HTML.
-      "description": string,        # ...in HTML.
-      "thumbnail": string,          # ...reference to an image object ID, only when type is "video".
+      "description": string,        # ...in HTML, only when type is "video", "gallery" or "infographic".
+      "width": integer,             # ...horizontal size (in pixels) for vector media (eg. SWF, SVG).
+      "height": integer,            # ...vertical size (in pixels) for vector media (eg. SWF, SVG).
+      "thumbnail": string,          # ...reference to an image object ID, only when type is "video" or "infographic".
       "authors": [] of strings,     # ...in plain text, in display order.
       "author_ids": [] of strings,  # ...references to author object IDs.
       "images": [] of strings,      # ...references to images (in order), only when type is "gallery".
