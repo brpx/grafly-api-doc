@@ -115,6 +115,7 @@ Each article is represented by three main blocks:
       "title": string,              # ...in HTML.
       "lead": string,               # ...in HTML.
       "description": string,        # ...in HTML, only when type is "video", "gallery" or "infographic".
+      "html": string,               # ...an HTML object/payload, only when type is "infographic".
       "width": integer,             # ...horizontal size (in pixels) for vector media (eg. SWF, SVG).
       "height": integer,            # ...vertical size (in pixels) for vector media (eg. SWF, SVG).
       "thumbnail": string,          # ...reference to an image object ID, only when type is "video" or "infographic".
