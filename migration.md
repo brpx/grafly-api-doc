@@ -46,7 +46,7 @@ Each article is represented by three main blocks:
     "body": [] of {              # ...content elements in display order.
       "type": string,            # ...one of "paragraph" "quote", "media" or "article".
       "html": string,            # ...ignored when type is not "paragraph" or "quote".
-      "authors": [] of strings,  # ...in display order, ignored when type is not "quote".
+      "author_names": [] of strings,  # ...in display order, ignored when type is not "quote".
 
       "article": {       # ...ignored when type is not "article".
         "type": string,  # ...currently only "live" (sub-articles of different types aren't allowed).
@@ -113,13 +113,13 @@ Each article is represented by three main blocks:
       "published": timestamp,       # ...media publishing time.
       "updated": timestamp,         # ...media last update time.
       "title": string,              # ...in HTML.
-      "lead": string,               # ...in HTML.
-      "description": string,        # ...in HTML, only when type is "video", "gallery" or "infographic".
+      "lead": string,               # ...in HTML, only when type is "video", "gallery", "document" or "infographic".
+      "description": string,        # ...in HTML.
       "html": string,               # ...an HTML object/payload, only when type is "infographic".
       "width": integer,             # ...horizontal size (in pixels) for vector media (eg. SWF, SVG).
       "height": integer,            # ...vertical size (in pixels) for vector media (eg. SWF, SVG).
       "thumbnail": string,          # ...reference to an image object ID, only when type is "video" or "infographic".
-      "authors": [] of strings,     # ...in plain text, in display order.
+      "author_names": [] of strings,     # ...in plain text, in display order.
       "author_ids": [] of strings,  # ...references to author object IDs.
       "images": [] of strings,      # ...references to images (in order), only when type is "gallery".
       "url": string,                # ...original media item's location, ignored when type is "gallery".
