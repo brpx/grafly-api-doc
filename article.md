@@ -80,4 +80,27 @@ FORMAT: 1A
         }
 
 
+## Update an article [PUT]
+
++ Headers
+
+        Authorization: <api_key>
+
++ Body
+
+        {
+            "external_id": "......",
+            "url": ".....",
+        }
+
+
++ Response 200 (application/json)
+
+        {
+            "id": ".....",
+            "title": "....",
+            ...
+        }
+
+
 
