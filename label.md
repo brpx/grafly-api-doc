@@ -31,3 +31,25 @@ Response 200 (application/json)
             ]
         }
 
+
+## Add Label [POST]
+
+
++ Headers
+
+        Authorization: <api_key>
+
+
++ Body
+
+        {
+            "name": "label name",
+            "css_class": "css class"
+        }
+
+Response 200 (application/json)
+
+        {
+            "ok": 1,
+            "id": "label id"
+        }
