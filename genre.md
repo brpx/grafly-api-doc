@@ -41,3 +41,28 @@ Response 200 (application/json)
             ]
         }
 
+
+## Add Genre [POST]
+
+
++ Headers
+
+        Authorization: <api_key>
+
+
++ Body
+
+        {
+            "name": "genre name",
+            "css_class": "css class"
+        }
+
+
+Response 200 (application/json)
+
+        {
+            "ok": 1
+            "id": "genre id"
+        }
+
+
