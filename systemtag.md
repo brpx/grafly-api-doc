@@ -4,7 +4,7 @@ FORMAT: 1A
 # Entity System tag [/api/v1.1/entity/{entity_id}/systemtag]
 
 
-## Retrieve Entity sytem tag [GET]
+## Retrieve Entity system tag [GET]
 
 
 + Headers
@@ -94,4 +94,30 @@ Response 200 (application/json)
                 }
             ]
         }
+
+
+
+## Add system tag [GET]
+
+
++ Headers
+
+        Authorization: <api_key>
+
++ Body
+
+        {
+            "name": "tag name",
+            "context": "context id",
+            "css": "css"
+        }
+           
+
+Response 200 (application/json)
+
+        {
+            "ok": 1,
+            "id": "system tag id"
+        }
+
 
