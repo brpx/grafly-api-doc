@@ -30,3 +30,24 @@ Response 200 (application/json)
             ]
         }
 
+
+## Add Author [POST]
+
++ Headers
+
+        Authorization: <api_key>
+
+
++ Body
+
+        {
+            "name": "author name",
+            "role": "author role"
+        }
+
+Response 200 (application/json)
+
+        {
+            "ok": 1
+        }
+
