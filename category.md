@@ -75,4 +75,28 @@ Response 200 (application/json)
         ]
     }
 
+## Add category [POST]
 
+
++ Headers
+
+        Authorization: <api_key>
+
+
++ Body
+
+        {
+            "name": "category name",
+        }
+
+        {
+            "name": "category name",
+            "parent": "parent_id",
+        }
+
+Response 200 (application/json)
+
+        {
+            "ok": 1
+            "id": "category id"
+        }
